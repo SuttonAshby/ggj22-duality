@@ -26,7 +26,7 @@ public class JumpController : MonoBehaviour
         if(shouldJump && PlayerState.Instance.isGrounded) {
             rigidBody.AddForce(jumpForce * Vector3.up);
             shouldJump = false;
-            // PlayerState.Instance.isGrounded = false;
+            PlayerState.Instance.isJumping = true;
         }
     }
 }

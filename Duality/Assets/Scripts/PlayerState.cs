@@ -8,6 +8,10 @@ public class PlayerState : MonoBehaviour
 
     public bool isFacingRight;
     public bool isGrounded;
+    public bool isJumping;
+    public bool isRunning;
+
+    public float currentXPos;
 
     void Awake () {
         //Initiate singleton
@@ -18,5 +22,7 @@ public class PlayerState : MonoBehaviour
 			Destroy(gameObject);
 		}
         isFacingRight = true;
+        isJumping = false;
+        isRunning = false;
     }
 }
