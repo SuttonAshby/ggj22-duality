@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public AudioSource death;
                  life.Play();
          }
      }
+        if(SceneManager.GetActiveScene().name == "Victory Screen"){
+            Debug.Log("Triggered");
+            death.Stop();
+            life.Stop();
+        }
  }
 }
