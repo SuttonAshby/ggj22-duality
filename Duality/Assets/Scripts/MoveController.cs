@@ -13,16 +13,10 @@ public class MoveController : MonoBehaviour
 
   void Awake() {
     rigidBody = GetComponent<Rigidbody>();
-    // lastYPos = gameObject.transform.position.y;
   }
  
-  // private float lastYPos;
   // void Update() {
-  //   float newYPos = gameObject.transform.position.y;
-  //   if(lastYPos == newYPos) {
-  //     PlayerState.Instance.isGrounded = true;
-  //   }
-  //   lastYPos = newYPos;
+  //   PlayerState.Instance.currentXPos = gameObject.transform.position.x;
   // }
   
   void FixedUpdate() {
@@ -34,14 +28,11 @@ public class MoveController : MonoBehaviour
       }
       if(horizontal != 0) {
         rigidBody.AddForce(moveForceHorizontal * Vector3.right * horizontal);
+        PlayerState.Instance.isRunning = true;
+      } else {
+        PlayerState.Instance.isRunning = false;
       }
       
-      //TODO check is grounded for jump
-      // if(shouldJump) {
-      //   rigidBody.AddForce(jumpForce * Vector3.up);
-      //   shouldJump = false;
-      // }
-
       if(horizontal > 0) {
         PlayerState.Instance.isFacingRight = true;
       }
