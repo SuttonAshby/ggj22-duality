@@ -24,6 +24,7 @@ public class JumpController : MonoBehaviour
     void FixedUpdate() {  
         //TODO check is grounded for jump
         if(shouldJump && PlayerState.Instance.isGrounded) {
+            GetComponent<AudioSource>().Play();
             rigidBody.AddForce(jumpForce * Vector3.up);
             shouldJump = false;
             PlayerState.Instance.isJumping = true;
