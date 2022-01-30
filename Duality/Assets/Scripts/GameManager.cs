@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
 //Escape
 
    
-        if (Input.GetKey("escape"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Escape key was pressed");
             Application.Quit();
         // }
 

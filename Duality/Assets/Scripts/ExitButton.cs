@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitGame : MonoBehaviour
+public class ExitButton : MonoBehaviour
 {
-  public void ClickExit ()
+  public void ExitGame(string scenename)
 {
+  Debug.Log("Exit button was pressed");
 Application.Quit();
 }
 }
